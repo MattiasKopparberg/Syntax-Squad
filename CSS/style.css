@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +8,21 @@
 }
 
 body {
-  font-family: "inter";
+  font-family: "inter", sans-serif;
+  width: 100%;
 }
 
-/* ----- HEADER ----- */
+/* ========== UTILS ========== */
 
+.hidden {
+  display: none;
+}
+
+.inactive {
+  opacity: 0.5;
+}
+
+/* ========== HEADER ========== */
 header {
   width: 100%;
   height: 200px;
@@ -25,8 +38,7 @@ h1 {
 }
 
 .button {
-  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-  border: 10px;
+  padding: 0.5rem 1.5rem;
   background-color: transparent;
   border: 1px solid white;
   border-radius: 10px;
@@ -44,13 +56,12 @@ button:first-child {
   color: #705ee6;
 }
 
-/* ----- MAIN ----- */
+/* ========== MAIN ========== */
 main {
   display: flex;
 }
 
-/* ----- USER SECTION ----- */
-
+/* ========== USER SECTION ========== */
 .user-section {
   width: 30%;
   padding: 2rem;
@@ -62,7 +73,6 @@ main {
   grid-column: 1/4;
 }
 
-/* Search field */
 .search-bar {
   position: relative;
 }
@@ -84,8 +94,6 @@ main {
   font-size: 1rem;
 }
 
-/* User cards */
-
 .user-container {
   display: flex;
   justify-content: flex-start;
@@ -96,12 +104,12 @@ main {
 }
 
 .user-container hr {
-  width: 100%;
+  width: 90%;
 }
 
-/* user card*/
 .user-card {
   width: 100%;
+  min-width: 350px;
   height: auto;
   background-color: #fff;
   padding: 1rem;
@@ -125,7 +133,7 @@ main {
 }
 
 .user-info p {
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 /* grid item - 2 */
@@ -169,14 +177,14 @@ main {
   align-self: center;
 }
 
-/* ----- PROFILE and POST SECTION ----- */
-
+/* ========== PROFILE + POSTS SECTION ========== */
 .profile-post-section {
   width: 70%;
   display: flex;
   flex-direction: column;
 }
-/* ----- PROFILE SECTION ----- */
+
+/* ========== PROFILE SECTION ========== */
 .profile-section {
   background-color: #d2d2ff;
   width: 100%;
@@ -216,6 +224,10 @@ main {
   padding-left: 2rem;
 }
 
+.divider {
+  display: none;
+}
+
 .todo-container {
   overflow-y: scroll;
   width: 100%;
@@ -253,25 +265,22 @@ main {
   left: -30px;
 }
 
-/* ----- POST SECTION ----- */
+/* ========== POST SECTION ========== */
 .post-section {
   background-color: #d2d2ff;
   width: 100%;
   padding: 2rem;
-  height: auto;
+  height: 100%;
 }
 
-/*  posts container */
 .post-container {
   column-count: 2;
   column-gap: 1.5rem;
   column-width: 400px;
-
   width: 100%;
   height: auto;
 }
 
-/* post */
 .post {
   break-inside: avoid;
   display: flex;
@@ -328,7 +337,7 @@ main {
 }
 
 .comment-user h4 {
-  opacity: 50%;
+  opacity: 0.5;
   font-size: 12px;
   font-weight: 500;
 }
@@ -340,17 +349,12 @@ main {
 
 hr {
   color: lightgray;
-  opacity: 50%;
+  opacity: 0.5;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-/* hidden class */
-.hidden {
-  display: none;
-}
-
-/* footer */
+/* ========== FOOTER ========== */
 footer {
   background-color: #705ee6;
   color: white;
@@ -364,5 +368,150 @@ footer h2 {
   font-size: 2rem;
 }
 footer p {
-  opacity: 50%;
+  opacity: 0.5;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1300px) {
+  /* ===== MAIN ===== */
+  main {
+    flex-direction: column;
+  }
+
+  /* ===== USER SECTION ===== */
+  .user-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+  }
+
+  .user-container {
+    flex-direction: row;
+    overflow-x: scroll;
+    gap: 1rem;
+  }
+
+  .search-bar {
+    max-width: 400px;
+    min-width: 200px;
+  }
+
+  /* ===== PRFOFILE & POST SECTION =====*/
+  .profile-post-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== POST SECTION ===== */
+  .post-container {
+    column-count: 2;
+    column-width: 250px;
+  }
+}
+
+@media (max-width: 1100px) {
+  /* ===== HEADER ===== */
+  .button {
+    padding: 0.3rem 1rem;
+  }
+  button:first-child {
+    margin-right: 1rem;
+  }
+
+  /* ===== TEXT ===== */
+  p,
+  .li {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  /* ===== PROFILE SECTION ===== */
+  .profile-user-info {
+    width: 40%;
+    min-width: 300px;
+    border-right: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 750px) {
+  /* ===== HEADER ===== */
+  header {
+    flex-direction: column;
+  }
+
+  .buttons {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 650px) {
+  /* Minska padding på alla sectioner*/
+  .user-section,
+  .post-section,
+  header {
+    padding: 1rem;
+  }
+
+  /* ===== PROFILE SECTION ===== */
+  .profile-section {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    height: 700px;
+  }
+
+  .profile-container hr {
+    width: 90%;
+  }
+
+  .profile-user-info {
+    width: 100%;
+    border-right: none;
+  }
+
+  .profile-user-info p {
+    padding-left: 2rem;
+  }
+
+  .divider {
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  /* ===== HEADER =====  */
+  header {
+    height: auto;
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+  .buttons {
+    align-self: center;
+    margin-top: 2rem;
+  }
+
+  /* ===== USER SECTION ===== */
+  .search-bar {
+    width: 100%;
+  }
+
+  .user-card {
+    min-width: 300px;
+  }
 }
