@@ -14,7 +14,8 @@
       rel="stylesheet"
     />
     <!-- Javascript-->
-    <script src="./JS/script.js" defer></script>
+    <script src="./JS/fetchTodo.js" defer></script>
+    <script src="./JS/fetchUsers.js" defer></script>
   </head>
 
   <body>
@@ -190,7 +191,7 @@
             <!-- Todo container -->
             <div class="todo-container">
               <h3>To do:</h3>
-
+              <button onclick="loadTodos(1)">Visar todos</button>
               <!-- EXTRA: Filter ikon, för att filtrera slutförda ej slutförda uppgifter -->
               <!-- Amandha-->
               <img class="todo-filter" src="././images/list-task.svg" />
