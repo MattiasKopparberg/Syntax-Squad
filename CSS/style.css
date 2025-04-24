@@ -19,13 +19,7 @@ body {
 
 .inactive {
   opacity: 0.5;
-
-.active {
-  background-color: #705ee6;
-  color: white;
-  border-radius: 10px;
 }
-
 
 /* ========== HEADER ========== */
 header {
