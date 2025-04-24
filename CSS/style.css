@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-
+/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -14,12 +14,18 @@ body {
 /* ========== UTILS ========== */
 
 .hidden {
-  display: none;
+   display: none !important;
 }
 
 .inactive {
   opacity: 0.5;
+
+.active {
+  background-color: #705ee6;
+  color: white;
+  border-radius: 10px;
 }
+
 
 /* ========== HEADER ========== */
 header {
@@ -72,9 +78,8 @@ main {
   grid-column: 1/4;
 }
 
-
-
 /* Search field */
+
 .search-bar {
   position: relative;
 }
@@ -96,6 +101,7 @@ main {
   font-size: 1rem;
 }
 
+
 /* User cards */
 .user-container {
   display: flex;
@@ -110,7 +116,6 @@ main {
   width: 90%;
 }
 
-/* user card*/
 .user-card {
   height: auto;
   width: 100%;
