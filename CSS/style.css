@@ -14,7 +14,7 @@ body {
 /* ========== UTILS ========== */
 
 .hidden {
-   display: none !important;
+  display: none !important;
 }
 
 .inactive {
@@ -94,7 +94,6 @@ main {
   text-align: center;
   font-size: 1rem;
 }
-
 
 /* User cards */
 .user-container {
@@ -514,6 +513,6 @@ footer p {
   }
 
   .user-card {
-    min-width: 300px;
+    width: auto;
   }
 }
