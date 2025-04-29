@@ -59,7 +59,9 @@ function displayUsers(users) {
 
       userBTN.innerHTML = `
         ${isVisible ? "See more" : "See less"} 
-        <img src="./images/${isVisible ? "Arrows.svg" : "ArrowUp.svg"}" alt="arrow" />
+        <img src="./images/${
+          isVisible ? "Arrows.svg" : "ArrowsUp.svg"
+        }" alt="arrow" />
       `;
     });
 
