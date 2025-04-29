@@ -14,7 +14,6 @@ function fetchUsers() {
 fetchUsers();
 
 // NY FUNKTION DISPLAYUSERS
-
 function displayUsers(users) {
   const userContainer = document.querySelector(".user-container");
   userContainer.innerHTML = "";
@@ -23,39 +22,45 @@ function displayUsers(users) {
     const userCard = document.createElement("div");
     userCard.classList.add("user-card");
     userCard.innerHTML = `
-        <div class="profile-img-container">
-            <img
-            class="profile-img"
-            src="./images/Ellipse 3.svg"
-            alt="user image"
-            />
-        </div>
-        <div class="user-info">
-            <h3>${user.username}</h3>
-            <p>${user.name}</p>
-            <p>${user.email}</p>
-            <hr>
-        </div>
-        <button class="see-more-btn">
-            See more <img src="./images/Arrows.svg" alt="arrow" />
-        </button>
-        <div class="more-info" style="display: none;">
-            <p>Address: ${user.address.city}</p>
-            <p>Phone number: ${user.phone}</p>
-            <p>Workplace: ${user.company.name}</p>
-        </div>
-        `;
+      <div class="profile-img-container">
+        <img
+          class="profile-img"
+          src="./images/Ellipse 3.svg"
+          alt="user image"
+        />
+      </div>
+      <div class="user-info">
+        <h3>${user.username}</h3>
+        <p>${user.name}</p>
+        <p>${user.email}</p>
+        <hr>
+      </div>
+      <button class="see-more-btn">
+        See more <img src="./images/Arrows.svg" alt="arrow" />
+      </button>
+      <div class="more-info" style="display: none;">
+        <p>Address: ${user.address.city}</p>
+        <p>Phone number: ${user.phone}</p>
+        <p>Workplace: ${user.company.name}</p>
+      </div>
+    `;
 
     userContainer.appendChild(userCard);
 
-    // See more
+    // See more / See less-knapp
     const userBTN = userCard.querySelector(".see-more-btn");
     const moreInfo = userCard.querySelector(".more-info");
 
     userBTN.addEventListener("click", (event) => {
       event.stopPropagation();
-      moreInfo.style.display =
-        moreInfo.style.display === "none" ? "block" : "none";
+
+      const isVisible = moreInfo.style.display === "block";
+      moreInfo.style.display = isVisible ? "none" : "block";
+
+      userBTN.innerHTML = `
+        ${isVisible ? "See more" : "See less"} 
+        <img src="./images/${isVisible ? "Arrows.svg" : "ArrowUp.svg"}" alt="arrow" />
+      `;
     });
 
     // set user card to active - inactive
@@ -98,7 +103,6 @@ function displayProfile(user) {
 
   profileInfo.innerHTML = `
     <img class="profile-img" src="./images/Ellipse 3.svg" width="150" alt="user image" />
- 
     <h3>${user.username}</h3>
     <hr>
     <p class="bold">${user.name}</p>
