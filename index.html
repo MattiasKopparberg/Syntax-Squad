@@ -43,12 +43,7 @@
     <!------------------------------------------------------------------------------------->
     <main>
       <!------ USER SECTION ------>
-      <!-- Amanda : Användar sökfunktion -->
-      <!-- Mattias: Hämta användar data och skapa användarkort -->
-      <!-- Bilal: Hämta profilbilder från API och koppla till användarkort-->
-
       <section class="user-section">
-        <!-- Amandha -->
         <!-- User search bar -->
         <div class="search-bar">
           <img src="./images/search.svg" class="magnifying-glass" width="20" />
@@ -56,9 +51,8 @@
         </div>
 
         <!-- USERS-->
-        <!-- Mattias & Bilal -->
         <div class="user-container">
-          <!-- Element att skapa med JS : "div" user-card -->
+          <!-- Användare hämtast dynasmiskt via API -->
           <div class="user-card">
             <h2>Loading information...</h2>
           </div>
@@ -75,7 +69,6 @@
         <!-- PROFILE SECTION -->
         <!-- När användarkort klickas ska denna section visas, "hidden" ska tas bort-->
         <section class="profile-section hidden">
-          <!-- -->
           <!-- Profile container -->
           <div class="profile-container">
             <div class="profile-user-info">
@@ -149,44 +142,10 @@
               </button>
 
               <!-- COMMENTS -->
-              <!-- Tomas -->
-              <!-- Comment container -->
-              <div class="comments-container">
-                <!-- Placeholder comments som ska tas bort när ritkgia kommentarer läses in -->
-                <!-- Element att skapa med JS : comment-->
-                <div class="comment">
-                  <!-- comment.email-->
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <!-- comment.body-->
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
 
-                <div class="comment">
-                  <!-- comment.email-->
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <!-- comment.body-->
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
+              <div class="comments-container">
+                <p>Laddar kommnetarer...</p>
+                <!-- Kommentarer hämtas dynasmiskt via API direkt på inlägg -->
               </div>
             </div>
 
