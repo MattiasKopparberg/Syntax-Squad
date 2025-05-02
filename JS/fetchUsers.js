@@ -77,6 +77,12 @@ function displayUsers(users) {
       if (isActive) {
         // Om kortet redan är aktivt: göm profile-section
         profileSection.classList.add("hidden");
+
+        // Ta bort filtreraring på inlägg
+        const postElements = document.querySelectorAll(".post");
+        postElements.forEach((postDiv) => {
+          postDiv.style.display = "block";
+        });
       } else {
         // Sätt alla kort till inactive
         allUserCards.forEach((card) => {
@@ -91,6 +97,7 @@ function displayUsers(users) {
         profileSection.classList.remove("hidden");
         loadTodos(user.id);
         displayProfile(user);
+        filterPosts(user.id);
       }
     });
   });
@@ -227,3 +234,15 @@ function createPostElements(allUsers) {
 }
 
 getPostsWithComments();
+
+// Funktion för att visa inlägg för en specifik användare
+function filterPosts(userId) {
+  const postElements = document.querySelectorAll(".post"); // hämta alla inlägg från DOM
+  postElements.forEach((postDiv) => {
+    if (postDiv.dataset.userId == userId) {
+      postDiv.style.display = "block";
+    } else {
+      postDiv.style.display = "none";
+    }
+  });
+}
