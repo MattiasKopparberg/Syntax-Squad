@@ -184,6 +184,10 @@ main {
   flex-direction: column;
 }
 
+.post-content {
+  margin-top: 10px;
+}
+
 /* ========== PROFILE SECTION ========== */
 .profile-section {
   background-color: #d2d2ff;
