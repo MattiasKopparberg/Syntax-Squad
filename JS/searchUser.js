@@ -11,4 +11,4 @@ searchInput.addEventListener("input", function () {
   );
 
   displayUsers(filteredUsers);
-
+});

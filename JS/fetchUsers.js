@@ -280,3 +280,4 @@ function filterPosts(userId) {
       postDiv.style.display = "none";
     }
   });
+}
