@@ -21,11 +21,6 @@
 ![Skärmbild 2025-05-04 194031](https://github.com/user-attachments/assets/d9aa7d7d-9c30-4296-bdcd-ea9d07a38651)
 
 
-### Reflektioner:
-
-?
-
-
 
 ### Skapad av:
 
