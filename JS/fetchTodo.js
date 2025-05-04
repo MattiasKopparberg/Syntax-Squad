@@ -26,4 +26,3 @@ async function loadTodos(userId) {
     console.error("Fel vid hämtning av todos:", error);
     todoList.innerHTML = "<li>Kunde inte ladda todos.</li>";
   }
-}
