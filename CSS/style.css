@@ -520,6 +520,48 @@ footer p {
   }
 }
 
+li[data-completed="true"] {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.filter-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.todo-filter {
+  width: 30px;
+  cursor: pointer;
+}
+
+.filter-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.filter-menu div {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.filter-menu div:hover {
+  background-color: #f0f0f0;
+}
+
+.hidden {
+  display: none;
+}
+
 @media (max-width: 450px) {
   /* ===== HEADER =====  */
   header {
