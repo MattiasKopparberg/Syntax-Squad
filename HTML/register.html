@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syntax Squad | Register</title>
+    <!-- Css -->
+    <link rel="stylesheet" href="../CSS/register-login.css" />
+    <!-- Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <a href="../index.html"><h1>{Syntax Squad}</h1></a>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="form-container">
+          <h2>Register</h2>
+          <form action="/register" method="POST" id="register-form">
+            <!-- Username-->
+            <div class="input-group">
+              <label for="username">Username</label><br />
+              <input type="text" name="username" id="username" required />
+            </div>
+            <!-- E-mail-->
+            <div class="input-group">
+              <label for="email">Email</label><br />
+              <input type="email" name="email" id="email" required />
+            </div>
+            <!-- Password-->
+            <div class="input-group">
+              <label for="password">Password</label><br />
+              <input type="password" name="password" id="password" required />
+            </div>
+            <!--Submit button-->
+            <button type="submit">Register</button>
+          </form>
+          <p>Already have an account? <a href="./login.html">Login here</a></p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
