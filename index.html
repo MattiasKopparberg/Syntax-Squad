@@ -16,6 +16,7 @@
     <!-- Javascript-->
     <script src="./JS/fetchTodo.js" defer></script>
     <script src="./JS/fetchUsers.js" defer></script>
+    <script src="./JS/filterTodo.js" defer></script>
   </head>
 
   <body>
@@ -49,10 +50,9 @@
       <section class="user-section">
         <!-- Amandha -->
         <!-- User search bar -->
-        <div class="search-bar">
-          <img src="./images/search.svg" class="magnifying-glass" width="20" />
-          <input class="search-input" type="search" placeholder="Search user" />
-        </div>
+            <div class="search-bar">
+                <input class="search-input" type="search" id="searchInput" placeholder="Skriv ett namn...">
+            </div>
 
         <!-- USERS-->
         <!-- Mattias & Bilal -->
@@ -101,52 +101,22 @@
               <h3>To do:</h3>
               <!-- EXTRA: Filter ikon, för att filtrera slutförda ej slutförda uppgifter -->
               <!-- Amandha-->
-              <img class="todo-filter" src="././images/list-task.svg" />
+              
+              <div class="filter-container">
+                <img class="todo-filter" src="./images/list-task.svg" alt="Filter"/>
+                <ul id="todo-list"></ul>
+                <div class="filter-menu ">
+                  <div onclick="filterTodos('all')">Alla</div>
+                  <div onclick="filterTodos('completed')">Slutförda</div>
+                  <div onclick="filterTodos('incomplete')">Ej slutförda</div>
+    </div>
+    
+</div>
 
               <!-- Element att skapa med JS : "ul" todo-list-->
               <ul class="todo-list">
                 <!-- To do items ( Hämtas via API) -->
-                <!-- placeholder list element, ska tas bort när ritkgia todos hämtas-->
-                <li>
-                  <img src="././images/checkedbox.svg" />
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestiae, excepturi!
-                </li>
-                <li>
-                  <img src="././images/checkedbox.svg" />
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestiae, excepturi!
-                </li>
-                <li>
-                  <img src="./images/checkedbox.svg" />
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestiae, excepturi!
-                </li>
-                <li>
-                  <img src="./images/checkedbox.svg" />
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestiae, excepturi!
-                </li>
-                <li>
-                  <img src="./images/uncheckedbox.svg" />
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestiae, excepturi!
-                </li>
-                <li>
-                  <img src="./images/uncheckedbox.svg" />
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestiae, excepturi!
-                </li>
-                <li>
-                  <img src="./images/uncheckedbox.svg" />
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestiae, excepturi!
-                </li>
-                <li>
-                  <img src="./images/uncheckedbox.svg" />
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestiae, excepturi!
-                </li>
+
               </ul>
             </div>
           </div>
