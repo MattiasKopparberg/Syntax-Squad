@@ -211,7 +211,9 @@ function createPostElements(allUsers) {
 
     <!-- Användar bild och username-->
       <div class="post-user">
-        <img src="${user.profileImage}" alt="profile img" width="40"/>
+        <img src="${
+          user.profileImage
+        }" class="profile-img" alt="profile img" width="40"/>
         <h3>${user.username}</h3>
       </div>
         
