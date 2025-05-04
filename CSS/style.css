@@ -112,11 +112,10 @@ main {
 /* ===== Profile image ===== */
 .profile-img {
   border-radius: 50%; /* Gör bilden cirkulär */
-  object-fit: cover;  /* Ser till att bilden fyller sin behållare utan att sträckas */
+  object-fit: cover; /* Ser till att bilden fyller sin behållare utan att sträckas */
   border: 2px solid #ddd; /* Ljus ram för mer professionell look */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtil skugga */
 }
-
 
 .user-card {
   height: auto;
@@ -540,5 +539,4 @@ footer p {
   .user-card {
     width: 100%;
   }
-
-
+}
