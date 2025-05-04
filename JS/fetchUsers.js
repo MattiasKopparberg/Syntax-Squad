@@ -1,17 +1,51 @@
-function fetchUsers() {
-  // FETCHUSERS EGEN FUNKTION
-  fetch("https://jsonplaceholder.typicode.com/users")
-    .then((response) => response.json())
-    .then((data) => {
-      allUsers = data;
-      displayUsers(allUsers);
-    })
-    .catch((error) => console.error("Error fetching users:", error));
+// ============ USERS ============//
+
+let allUsers = [];
+
+// Hämta användardata
+async function fetchUsers() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await response.json();
+    allUsers = data;
+
+    // Vänta på profilbilder
+    await fetchProfileImages();
+
+    // Tilldela prfofilbilder till användare
+    allUsers.forEach((user, index) => {
+      user.profileImage = profileImages[index];
+    });
+
+    // Visa användarna
+    displayUsers(allUsers);
+  } catch (error) {
+    console.error("Error fetching users or images:", error);
+  }
 }
 
-fetchUsers();
+(async () => {
+  await fetchUsers();
+  await getPostsWithComments();
+})();
 
-// NY FUNKTION DISPLAYUSERS
+// ============ PROFILE IMAGES ============//
+
+let profileImages = [];
+
+async function fetchProfileImages() {
+  try {
+    const response = await fetch("https://randomuser.me/api/?results=10");
+    const data = await response.json();
+    profileImages = data.results.map((user) => user.picture.large);
+  } catch (error) {
+    console.error("Fel vid hämtning av av profilbilder:", error);
+    return [];
+  }
+}
+
+// ============ DISPLAY USERS  ============//
+
 function displayUsers(users) {
   const userContainer = document.querySelector(".user-container");
   userContainer.innerHTML = "";
@@ -23,7 +57,7 @@ function displayUsers(users) {
       <div class="profile-img-container">
         <img
           class="profile-img"
-          src="./images/Ellipse 3.svg"
+          src="${user.profileImage}" width="80"
           alt="user image"
         />
       </div>
@@ -77,6 +111,12 @@ function displayUsers(users) {
       if (isActive) {
         // Om kortet redan är aktivt: göm profile-section
         profileSection.classList.add("hidden");
+
+        // Ta bort filtreraring på inlägg
+        const postElements = document.querySelectorAll(".post");
+        postElements.forEach((postDiv) => {
+          postDiv.style.display = "block";
+        });
       } else {
         // Sätt alla kort till inactive
         allUserCards.forEach((card) => {
@@ -91,10 +131,13 @@ function displayUsers(users) {
         profileSection.classList.remove("hidden");
         loadTodos(user.id);
         displayProfile(user);
+        filterPosts(user.id);
       }
     });
   });
 }
+
+// ============ PROFIL SIDA ============//
 
 // Visa profilsida
 function displayProfile(user) {
@@ -102,7 +145,7 @@ function displayProfile(user) {
   profileInfo.innerHTML = ""; // Rensa befintlig profilinformation
 
   profileInfo.innerHTML = `
-    <img class="profile-img" src="./images/Ellipse 3.svg" width="150" alt="user image" />
+    <img class="profile-img" src="${user.profileImage}" width="150" alt="user image" />
     <h3>${user.username}</h3>
     <hr>
     <p class="bold">${user.name}</p>
@@ -115,8 +158,7 @@ function displayProfile(user) {
   `;
 }
 
-// ---------------------------------------- //
-// ------------------ POSTS -----------------//
+// ================ POSTS ================//
 
 let allPosts = [];
 
@@ -151,14 +193,16 @@ function createPostElements(allUsers) {
   const postsContainer = document.querySelector(".post-container");
   postsContainer.innerHTML = ""; // Rensa inlägg vid start
 
-  console.log(allPosts);
-
   allPosts.forEach((post) => {
     const postDiv = document.createElement("div");
     postDiv.classList.add("post");
     postDiv.dataset.userId = post.userId; // Sätt data-attribute för användarens ID
 
     const user = allUsers.find((user) => user.id === post.userId);
+    if (!user) {
+      console.warn(`Ingen användare hittad för post.userId: ${post.userId}`);
+      return;
+    }
 
     // Begränsa till 3 kommentarer
     const limitedComments = post.comments.slice(0, 3);
@@ -167,7 +211,7 @@ function createPostElements(allUsers) {
 
     <!-- Användar bild och username-->
       <div class="post-user">
-        <img src="./images/Ellipse 3.svg" alt="profile img" width="40"/>
+        <img src="${user.profileImage}" alt="profile img" width="40"/>
         <h3>${user.username}</h3>
       </div>
         
@@ -226,4 +270,14 @@ function createPostElements(allUsers) {
   });
 }
 
-getPostsWithComments();
+// Funktion för att visa inlägg för en specifik användare
+function filterPosts(userId) {
+  const postElements = document.querySelectorAll(".post"); // hämta alla inlägg från DOM
+  postElements.forEach((postDiv) => {
+    if (postDiv.dataset.userId == userId) {
+      postDiv.style.display = "block";
+    } else {
+      postDiv.style.display = "none";
+    }
+  });
+}
