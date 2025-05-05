@@ -109,7 +109,6 @@ main {
   width: 90%;
 }
 
-
 .user-card {
   height: auto;
   width: 100%;
@@ -180,12 +179,9 @@ main {
 
 /* profile image  */
 .profile-img {
-  border-radius: 50%; 
-  object-fit: cover; 
-
+  border-radius: 50%;
+  object-fit: cover;
 }
-
-
 
 /* ========== PROFILE + POSTS SECTION ========== */
 .profile-post-section {
@@ -264,8 +260,8 @@ main {
 .todo-filter {
   width: 25px;
   position: absolute;
-  right: 20px;
-  top: 5px;
+  right: 30px;
+  top: -20px;
   cursor: pointer;
 }
 
@@ -545,7 +541,7 @@ li[data-completed="true"] {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
 

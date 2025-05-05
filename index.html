@@ -78,37 +78,33 @@
           <!-- Profile container -->
           <div class="profile-container">
             <div class="profile-user-info">
+              <h2>Loading information...</h2>
               <!-- Användardata hämtas från Api i fetchUsers.js -->
             </div>
             <!-- TODO -->
             <div class="todo-container">
               <h3>To do:</h3>
-
-              <!-- Element att skapa med JS : "ul" todo-list-->
               <ul class="todo-list">
-                <!-- To do items ( Hämtas via API) -->
+                <h2>Loading information...</h2>
+                <!-- To do items hämtas via API i fetchTodo.js -->
               </ul>
+            </div>
+            <!------------------------ UNDER UTVECKLING -------------------------->
+            <!-- Filter ikon, för att filtrera slutförda ej slutförda uppgifter -->
 
-              <!------------------------ UNDER UTVECKLING -------------------------->
-              <!-- Filter ikon, för att filtrera slutförda ej slutförda uppgifter -->
+            <div class="filter-container">
+              <img
+                class="todo-filter"
+                src="./images/list-task.svg"
+                alt="Filter"
+              />
               <!-- 
-
-              <div class="filter-container">
-                  <img
-                    class="todo-filter"
-                    src="./images/list-task.svg"
-                    alt="Filter"
-                  />
-                  <ul id="todo-list"></ul>
-                  
-                  <div class="filter-menu">
-                      <div onclick="filterTodos('all')">Alla</div>
-                      <div onclick="filterTodos('completed')">Slutförda</div>
-                      <div onclick="filterTodos('incomplete')">Ej slutförda</div>
-                  </div>
-              </div>
-
-              -->
+                    <div class="filter-menu">
+                        <div onclick="filterTodos('all')">Alla</div>
+                        <div onclick="filterTodos('completed')">Slutförda</div>
+                        <div onclick="filterTodos('incomplete')">Ej slutförda</div>
+                    </div> 
+                    -->
             </div>
           </div>
         </section>
