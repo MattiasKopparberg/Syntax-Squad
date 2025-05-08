@@ -180,12 +180,9 @@ main {
 
 /* profile image  */
 .profile-img {
-  border-radius: 50%; 
-  object-fit: cover; 
-
+  border-radius: 50%;
+  object-fit: cover;
 }
-
-
 
 /* ========== PROFILE + POSTS SECTION ========== */
 .profile-post-section {
@@ -264,8 +261,8 @@ main {
 .todo-filter {
   width: 25px;
   position: absolute;
-  right: 20px;
-  top: 5px;
+  right: 30px;
+  top: -20px;
   cursor: pointer;
 }
 
@@ -520,11 +517,6 @@ footer p {
   }
 }
 
-li[data-completed="true"] {
-  text-decoration: line-through;
-  color: gray;
-}
-
 .filter-container {
   position: relative;
   display: inline-block;
@@ -538,14 +530,14 @@ li[data-completed="true"] {
 
 .filter-menu {
   position: absolute;
-  top: 35px;
-  left: 0;
+  top: 25px;
+  right: 20px;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
 
