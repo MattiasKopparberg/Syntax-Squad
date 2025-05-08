@@ -73,14 +73,18 @@
         <!------------------------------------------------------------------------------------->
 
         <!-- PROFILE SECTION -->
+
         <!-- När användarkort klickas ska denna section visas -->
+
         <section class="profile-section hidden">
           <!-- Profile container -->
           <div class="profile-container">
             <div class="profile-user-info">
+
               <h2>Loading information...</h2>
-              <!-- Användardata hämtas från Api i fetchUsers.js -->
+              <!-- Användardata hämtas från Api i fetchUsers.js -->   
             </div>
+            
             <!-- TODO -->
             <div class="todo-container">
               <h3>To do:</h3>
@@ -89,9 +93,10 @@
                 <!-- To do items hämtas via API i fetchTodo.js -->
               </ul>
             </div>
+            
+            
             <!------------------------ UNDER UTVECKLING -------------------------->
             <!-- Filter ikon, för att filtrera slutförda ej slutförda uppgifter -->
-
             <div class="filter-container">
               <img
                 class="todo-filter"
@@ -99,13 +104,15 @@
                 alt="Filter"
               />
 
-                    <div class="filter-menu hidden">
+               <div class="filter-menu hidden">
                         <div onclick="filterTodos('all')">Alla</div>
                         <div onclick="filterTodos('completed')">Slutförda</div>
                         <div onclick="filterTodos('incomplete')">Ej slutförda</div>
-                    </div> 
-
+               </div> 
+              
+              
             </div>
+            
           </div>
         </section>
 
@@ -114,8 +121,15 @@
         <article class="post-section">
           <!-- post container -->
           <div class="post-container">
+
             <!-- Inlägg och kommentarer hämtas via API och skapas i fetchUsers.js-->
-          </div>
+              <!-- COMMENTS -->
+              <div class="comments-container">
+                <p>Laddar kommnetarer...</p>
+                <!-- Kommentarer hämtas dynasmiskt via API direkt på inlägg -->
+              </div>
+            </div>
+   
         </article>
         <!------------------------------------------------------------------------------------->
       </section>
