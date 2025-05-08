@@ -15,7 +15,7 @@
 * Möjlighet att söka efter en användare, det går att söka på användarnamn, namn eller e-mail
 * När användarkorten klickas kommer man in på respektive användares profilsida och endast denna användares inlägg visas, när använadrkortet klickas igen återgår man till ofiltrerat läge
 * Profilbild hämtas från randomUser Api (https://randomuser.me/api/) 
-* Möjlighet att filtrera i todo listan efter slutförda/ejs lutförda uppgifter ( denna funktion är under utveckling) 
+* Möjlighet att filtrera i todo listan efter slutförda/ej slutförda uppgifter 
 * Resposivitet: Sidan fungerar lika bra på små skärmar som på stora skärmar
   
 ![Skärmbild 2025-05-04 194031](https://github.com/user-attachments/assets/d9aa7d7d-9c30-4296-bdcd-ea9d07a38651)
