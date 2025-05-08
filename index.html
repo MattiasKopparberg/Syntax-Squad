@@ -14,9 +14,10 @@
       rel="stylesheet"
     />
     <!-- Javascript-->
-    <script src="./JS/fetchTodo.js" defer></script>
     <script src="./JS/fetchUsers.js" defer></script>
     <script src="./JS/filterTodo.js" defer></script>
+    <!--<script src="./JS/fetchTodo.js" defer></script>-->
+    <script src="./JS/searchUser.js" defer></script>
   </head>
 
   <body>
@@ -43,21 +44,21 @@
     <!------------------------------------------------------------------------------------->
     <main>
       <!------ USER SECTION ------>
-      <!-- Amanda : Användar sökfunktion -->
-      <!-- Mattias: Hämta användar data och skapa användarkort -->
-      <!-- Bilal: Hämta profilbilder från API och koppla till användarkort-->
-
       <section class="user-section">
-        <!-- Amandha -->
         <!-- User search bar -->
-            <div class="search-bar">
-                <input class="search-input" type="search" id="searchInput" placeholder="Skriv ett namn...">
-            </div>
+        <div class="search-bar">
+          <img
+            src="./images/search.svg"
+            class="magnifying-glass"
+            width="20"
+            alt="magnifying glass"
+          />
+          <input class="search-input" type="search" placeholder="Search user" />
+        </div>
 
         <!-- USERS-->
-        <!-- Mattias & Bilal -->
         <div class="user-container">
-          <!-- Element att skapa med JS : "div" user-card -->
+          <!-- Användare hämtast dynasmiskt via API -->
           <div class="user-card">
             <h2>Loading information...</h2>
           </div>
@@ -72,353 +73,48 @@
         <!------------------------------------------------------------------------------------->
 
         <!-- PROFILE SECTION -->
-        <!-- När användarkort klickas ska denna section visas, "hidden" ska tas bort-->
-        <section class="profile-section">
-          <!-- -->
+        <!-- När användarkort klickas ska denna section visas -->
+        <section class="profile-section hidden">
           <!-- Profile container -->
           <div class="profile-container">
             <div class="profile-user-info">
-              <img
-                src="././images/Ellipse 3.svg"
-                width="150"
-                alt="profile image"
-              />
-              <h3>Username</h3>
-              <hr />
-              <p>Name</p>
-              <p>User@email.com</p>
-
-              <p>City: UserCity</p>
-              <p>Phone: 123 456 789</p>
-              <p>Company: UserCompany</p>
-              <hr class="divider" />
+              <h2>Loading information...</h2>
+              <!-- Användardata hämtas från Api i fetchUsers.js -->
             </div>
-
             <!-- TODO -->
-            <!-- Natalia -->
-            <!-- Todo container -->
             <div class="todo-container">
               <h3>To do:</h3>
-              <!-- EXTRA: Filter ikon, för att filtrera slutförda ej slutförda uppgifter -->
-              <!-- Amandha-->
-              
-              <div class="filter-container">
-                <img class="todo-filter" src="./images/list-task.svg" alt="Filter"/>
-                <ul id="todo-list"></ul>
-                <div class="filter-menu ">
-                  <div onclick="filterTodos('all')">Alla</div>
-                  <div onclick="filterTodos('completed')">Slutförda</div>
-                  <div onclick="filterTodos('incomplete')">Ej slutförda</div>
-    </div>
-    
-</div>
-
-              <!-- Element att skapa med JS : "ul" todo-list-->
-              <ul class="todo-list">
-                <!-- To do items ( Hämtas via API) -->
-
+              <ul class="todo-list" id="todo-list">
+                <h2>Loading information...</h2>
+                <!-- To do items hämtas via API i fetchTodo.js -->
               </ul>
+            </div>
+            <!------------------------ UNDER UTVECKLING -------------------------->
+            <!-- Filter ikon, för att filtrera slutförda ej slutförda uppgifter -->
+
+            <div class="filter-container">
+              <img
+                class="todo-filter"
+                src="./images/list-task.svg"
+                alt="Filter"
+              />
+
+                    <div class="filter-menu hidden">
+                        <div onclick="filterTodos('all')">Alla</div>
+                        <div onclick="filterTodos('completed')">Slutförda</div>
+                        <div onclick="filterTodos('incomplete')">Ej slutförda</div>
+                    </div> 
+
             </div>
           </div>
         </section>
 
         <!------------------------------------------------------------------------------------->
         <!-- POST SECTION -->
-        <!-- Tomas -->
         <article class="post-section">
           <!-- post container -->
           <div class="post-container">
-            <!-- Element att skapa med JS : "div" post -->
-            <div class="post">
-              <!-- Användar bild och username-->
-              <div class="post-user">
-                <img
-                  src="./images/Ellipse 3.svg"
-                  alt="profile img"
-                  width="40"
-                />
-                <h3>Username</h3>
-              </div>
-              <!-- Post.title-->
-              <h4>Post title</h4>
-              <!-- Post.body-->
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-                laudantium sequi at reprehenderit numquam reiciendis asperiores
-                provident ab voluptates dicta?
-              </p>
-              <hr />
-
-              <!-- Read comment button -->
-              <button class="read-comments">
-                Read comments <img src="./images/Arrows.svg" alt="arrow" />
-              </button>
-
-              <!-- COMMENTS -->
-              <!-- Tomas -->
-              <!-- Comment container -->
-              <div class="comments-container">
-                <!-- Placeholder comments som ska tas bort när ritkgia kommentarer läses in -->
-                <!-- Element att skapa med JS : comment-->
-                <div class="comment">
-                  <!-- comment.email-->
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <!-- comment.body-->
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
-
-                <div class="comment">
-                  <!-- comment.email-->
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <!-- comment.body-->
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
-              </div>
-            </div>
-
-            <!------------------------------------------------------------------------------------->
-
-            <!-- Tillfälliga placeholder posts för att se layout, sk atas bort när inlägg hämtats från API -->
-            <!-- Post 2 -->
-            <div class="post">
-              <div class="post-user">
-                <img
-                  src="./images/Ellipse 3.svg"
-                  alt="profile img"
-                  width="40"
-                />
-                <h3>Username</h3>
-              </div>
-
-              <h4>Post title</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-                laudantium sequi at reprehenderit numquam reiciendis asperiores
-                provident ab voluptates dicta?
-              </p>
-              <hr />
-              <!-- Read comment button -->
-              <button class="read-comments">
-                Read comments <img src="./images/Arrows.svg" alt="arrow" />
-              </button>
-              <!-- Comment container -->
-              <div class="comments-container hidden">
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
-
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
-
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Post  3 -->
-            <div class="post">
-              <div class="post-user">
-                <img
-                  src="./images/Ellipse 3.svg"
-                  alt="profile img"
-                  width="40"
-                />
-                <h3>Username</h3>
-              </div>
-
-              <h4>Post title</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-                laudantium sequi at reprehenderit numquam reiciendis asperiores
-                provident ab voluptates dicta?
-              </p>
-              <hr />
-              <!-- Read comment button -->
-              <button class="read-comments">
-                Read comments <img src="./images/Arrows.svg" alt="arrow" />
-              </button>
-              <!-- Comment container -->
-              <div class="comments-container hidden">
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
-
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
-
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- Comment container end-->
-            </div>
-
-            <!-- Post 4 -->
-            <div class="post">
-              <div class="post-user">
-                <img
-                  src="./images/Ellipse 3.svg"
-                  alt="profile img"
-                  width="40"
-                />
-                <h3>Username</h3>
-              </div>
-
-              <h4>Post title</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-                laudantium sequi at reprehenderit numquam reiciendis asperiores
-                provident ab voluptates dicta?
-              </p>
-              <hr />
-              <!-- Read comment button -->
-              <button class="read-comments">
-                Read comments <img src="./images/Arrows.svg" alt="arrow" />
-              </button>
-              <!-- Comment container -->
-              <div class="comments-container hidden">
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="/./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
-
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="/./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                  <hr />
-                </div>
-
-                <!-- comment-->
-                <div class="comment">
-                  <div class="comment-user">
-                    <img src="/./images/chat.svg" alt="comment bubble" />
-                    <h4>user@gmail.com</h4>
-                  </div>
-                  <div class="comment-body">
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Officia a quaerat consequatur nostrum, distinctio dolore
-                      nulla explicabo neque eligendi dolorum?
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- Comment container end-->
-            </div>
+            <!-- Inlägg och kommentarer hämtas via API och skapas i fetchUsers.js-->
           </div>
         </article>
         <!------------------------------------------------------------------------------------->
